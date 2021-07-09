@@ -97,6 +97,7 @@ public class SamplePluginManager extends FastPluginManager {
         if (callback != null) {
             final View view = LayoutInflater.from(mCurrentContext).inflate(R.layout.activity_load_plugin, null);
             callback.onShowLoadingView(view);
+            return;
         }
 
         executorService.execute(new Runnable() {
