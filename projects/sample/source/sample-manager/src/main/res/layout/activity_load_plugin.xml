@@ -45,4 +45,10 @@
         android:text="test edittext"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
+
+    <Button
+        android:text="start button"
+        android:background="@drawable/btn_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
 </LinearLayout>

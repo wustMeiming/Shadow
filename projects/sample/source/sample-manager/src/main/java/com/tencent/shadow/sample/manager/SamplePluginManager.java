@@ -21,6 +21,7 @@ package com.tencent.shadow.sample.manager;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.ContextThemeWrapper;
 import android.view.LayoutInflater;
 import android.view.View;
 
@@ -95,7 +96,9 @@ public class SamplePluginManager extends FastPluginManager {
         final Bundle extras = bundle.getBundle(Constant.KEY_EXTRAS);
 
         if (callback != null) {
-            final View view = LayoutInflater.from(mCurrentContext).inflate(R.layout.activity_load_plugin, null);
+            ContextThemeWrapper contextThemeWrapper = new ContextThemeWrapper(mCurrentContext, context.getTheme());
+            final View view = LayoutInflater.from(contextThemeWrapper).inflate(R.layout.activity_load_plugin, null);
+            //final View view = LayoutInflater.from(mCurrentContext).inflate(R.layout.activity_load_plugin, null);
             callback.onShowLoadingView(view);
             return;
         }
